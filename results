@@ -1,0 +1,141 @@
+AdS₅/CFT₄ Scalar-Stabilized Wormhole Simulation
+==================================================
+Author: Hugo Hertault
+Affiliation: Independent Researcher, Lille, France
+==================================================
+
+Physics-informed neural network implementation for
+scalar-stabilized Euclidean wormholes in AdS₅/CFT₄
+correspondence with holographic renormalization.
+==================================================
+AdS₅/CFT₄ physics initialized
+   AdS radius L = 1.0
+   Cosmological constant Λ = -6.0/L²
+   Thermal period β = 6.283
+   Action normalization initialized
+      Witten factor: 0.019894
+      Renormalization factor 36π × 1.017: 115.0
+      Final normalization: 0.000173
+Computing on device: cpu
+AdS₅/CFT₄ Scalar-Stabilized Wormhole Study
+==================================================
+
+--- Solving Strong coupling regime ---
+Parameters: m²L² = -3.5, λL² = 0.1
+   Parameter validation:
+      m²L² = -3.5 (BF bound: -4.0)
+      λL² = 0.1
+      CFT₄ operator dimension Δ = 2.707
+      BF bound satisfied: True
+   Using reference initial conditions
+   Initial values: φ₀=8.560, a₀=0.950, b₀=1.050
+   Created 150 training points over [0, 3.0]L
+   Beginning training process...
+      Epoch    0: Loss = 3.91e+11, LR = 1.0e-03
+      Epoch  500: Loss = 3.21e+10, LR = 1.0e-03
+      Epoch 1000: Loss = 2.70e+10, LR = 1.0e-03
+      Epoch 1500: Loss = 2.48e+10, LR = 1.0e-03
+      Epoch 2000: Loss = 2.32e+10, LR = 1.0e-03
+      Epoch 2500: Loss = 2.19e+10, LR = 1.0e-03
+   Training completed with final loss: 2.08e+10
+   Solution obtained:
+      Euclidean action: 1.7
+      CFT₄ dimension: 2.707
+      Asymptotic convergence: 2.45e-01
+      Boundary accuracy: 1.00e+00
+
+--- Solving Moderate coupling ---
+Parameters: m²L² = -3.0, λL² = 0.2
+   Parameter validation:
+      m²L² = -3.0 (BF bound: -4.0)
+      λL² = 0.2
+      CFT₄ operator dimension Δ = 3.000
+      BF bound satisfied: True
+   Using reference initial conditions
+   Initial values: φ₀=5.790, a₀=0.880, b₀=1.120
+   Created 150 training points over [0, 3.0]L
+   Beginning training process...
+      Epoch    0: Loss = 9.82e+10, LR = 1.0e-03
+      Epoch  500: Loss = 3.20e+10, LR = 1.0e-03
+      Epoch 1000: Loss = 2.74e+10, LR = 1.0e-03
+      Epoch 1500: Loss = 2.48e+10, LR = 1.0e-03
+      Epoch 2000: Loss = 2.32e+10, LR = 1.0e-03
+      Epoch 2500: Loss = 2.18e+10, LR = 1.0e-03
+   Training completed with final loss: 2.07e+10
+   Solution obtained:
+      Euclidean action: 1.9
+      CFT₄ dimension: 3.000
+      Asymptotic convergence: 2.44e-01
+      Boundary accuracy: 1.00e+00
+
+--- Solving Intermediate coupling ---
+Parameters: m²L² = -2.5, λL² = 0.3
+   Parameter validation:
+      m²L² = -2.5 (BF bound: -4.0)
+      λL² = 0.3
+      CFT₄ operator dimension Δ = 3.225
+      BF bound satisfied: True
+   Using reference initial conditions
+   Initial values: φ₀=4.530, a₀=0.820, b₀=1.180
+   Created 150 training points over [0, 3.0]L
+   Beginning training process...
+      Epoch    0: Loss = 5.44e+10, LR = 1.0e-03
+      Epoch  500: Loss = 3.14e+10, LR = 1.0e-03
+      Epoch 1000: Loss = 2.75e+10, LR = 1.0e-03
+      Epoch 1500: Loss = 2.47e+10, LR = 1.0e-03
+      Epoch 2000: Loss = 2.30e+10, LR = 1.0e-03
+      Epoch 2500: Loss = 2.16e+10, LR = 1.0e-03
+   Training completed with final loss: 2.06e+10
+   Solution obtained:
+      Euclidean action: 2.0
+      CFT₄ dimension: 3.225
+      Asymptotic convergence: 2.44e-01
+      Boundary accuracy: 9.99e-01
+
+--- Solving Weak coupling regime ---
+Parameters: m²L² = -2.0, λL² = 0.4
+   Parameter validation:
+      m²L² = -2.0 (BF bound: -4.0)
+      λL² = 0.4
+      CFT₄ operator dimension Δ = 3.414
+      BF bound satisfied: True
+   Using reference initial conditions
+   Initial values: φ₀=3.770, a₀=0.760, b₀=1.240
+   Created 150 training points over [0, 3.0]L
+   Beginning training process...
+      Epoch    0: Loss = 4.20e+10, LR = 1.0e-03
+      Epoch  500: Loss = 3.16e+10, LR = 1.0e-03
+      Epoch 1000: Loss = 2.80e+10, LR = 1.0e-03
+      Epoch 1500: Loss = 2.48e+10, LR = 1.0e-03
+      Epoch 2000: Loss = 2.30e+10, LR = 1.0e-03
+      Epoch 2500: Loss = 2.16e+10, LR = 1.0e-03
+   Training completed with final loss: 2.04e+10
+   Solution obtained:
+      Euclidean action: 2.2
+      CFT₄ dimension: 3.414
+      Asymptotic convergence: 2.44e-01
+      Boundary accuracy: 1.00e+00
+
+=== RESULTS SUMMARY ===
+                  Case  m²L²  λL² Δ_CFT S_E    Loss AdS_Error BF_OK
+Strong coupling regime  -3.5  0.1 2.707   2 2.1e+10   2.4e-01     ✓
+     Moderate coupling  -3.0  0.2 3.000   2 2.1e+10   2.4e-01     ✓
+ Intermediate coupling  -2.5  0.3 3.225   2 2.1e+10   2.4e-01     ✓
+  Weak coupling regime  -2.0  0.4 3.414   2 2.0e+10   2.4e-01     ✓
+
+Results saved to 'ads5_wormhole_results.csv'
+Visualization saved as 'ads5_wormhole_analysis.png'
+
+
+=== STUDY COMPLETED ===
+Computed 4 wormhole solutions
+Results saved and visualizations generated
+
+Solution validation:
+   Average euclidean action: 2.0
+   Action range: [1.7, 2.2]
+   Actions in physical range: True
+   Breitenlohner-Freedman bounds satisfied: True
+   Maximum asymptotic AdS₅ error: 2.45e-01
+
+• Some constraints may require further optimization
